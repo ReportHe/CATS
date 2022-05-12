@@ -37,15 +37,15 @@ public class PackageTgstoCEkCTgs {
     @StructField(order = 8)
     public byte[] redundancy;
 
-    public PackageTgstoCEkCTgs(String Kcv1, String IDv1, String TS1, byte[] TicketV1) {
-        this.KcvLen = Kcv1.length();
-        this.Kcv = Kcv1.toCharArray();
-        this.IDvLen = IDv1.length();
-        this.IDv = IDv1.toCharArray();
-        this.TSLen = TS1.length();
-        this.TS = TS1.toCharArray();
-        this.TicketVLen = TicketV1.length;
-        this.TicketV = TicketV1;
+    public PackageTgstoCEkCTgs(String KeyClientServer_, String IdServer_, String TimeStamp_, byte[] TicketServer_) {
+        this.KcvLen = KeyClientServer_.length();
+        this.Kcv = IdServer_.toCharArray();
+        this.IDvLen = IdServer_.length();
+        this.IDv = IdServer_.toCharArray();
+        this.TSLen = TimeStamp_.length();
+        this.TS = TimeStamp_.toCharArray();
+        this.TicketVLen = TicketServer_.length;
+        this.TicketV = TicketServer_;
         this.redundancy = new byte[10];
     }
 }
