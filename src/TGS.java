@@ -70,39 +70,47 @@ public class TGS implements Runnable {
                         JavaStruct.unpack(tickettgs, TGS_ticket); // 将解密后的票据部分的字节流形式解包成TicketTgs结构体形式
                         JavaStruct.unpack(authenticator, TGS_authenticator);
 
-                        System.out.println(String.valueOf(tickettgs.IDc) + "\t" + String.valueOf(authenticator.IDc)
+                        System.out.println(String.valueOf(tickettgs.IdClient) + "\t"
+                                        + String.valueOf(authenticator.IdClient)
                                         + "\t"
-                                        + String.valueOf(tickettgs.ADc) + "\t" + String.valueOf(authenticator.ADc));
+                                        + String.valueOf(tickettgs.AddressClient) + "\t"
+                                        + String.valueOf(authenticator.AddressClient));
 
-                        if (Arrays.equals(tickettgs.IDc, authenticator.IDc)
-                                        && Arrays.equals(tickettgs.ADc, authenticator.ADc))// 发送包
+                        if (Arrays.equals(tickettgs.IdClient, authenticator.IdClient)
+                                        && Arrays.equals(tickettgs.AddressClient, authenticator.AddressClient))// 比对票据和认证中的信息是否核对成功，成功则发送包
                         {
-                                log.Log.AuthLog(IDtgs, 0, String.valueOf(tickettgs.IDc));
-                                System.out.println("用户认证成功");
-                                Date date1 = new Date(0);
+                                log.Log.AuthLog(IDtgs, 0, String.valueOf(tickettgs.IdClient));
+                                System.out.println("用户认证成功!");
+
+                                //打包票据并加密
+                                Date date1 = new Date(0);   //返回自1970年1月1日零时以来的毫秒数
                                 SimpleDateFormat df1 = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
-                                TS = df1.format(date1);
+                                TS = df1.format(date1);   //以上面的格式输出字符串形式的时间戳
                                 System.out.println(IDV);
-                                TicketV a2 = new TicketV(KCV, String.valueOf(tickettgs.IDc),
-                                                String.valueOf(tickettgs.ADc), IDV, TS,
-                                                Lifetime4);
+                                TicketV a2 = new TicketV(KCV, String.valueOf(tickettgs.IdClient),
+                                                String.valueOf(tickettgs.AddressClient), IDV, TS,
+                                                Lifetime4); //
                                 byte[] a2fb = JavaStruct.pack(a2);
                                 byte[] a2jiami = new MainBody(a2fb, KEY, 1).mainBody();
+
+                                //
                                 Date date = new Date(0);
                                 SimpleDateFormat df = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
                                 TS4 = df.format(date);
                                 PackageTgstoCEkCTgs d2 = new PackageTgstoCEkCTgs(KCV, IDV, TS4, a2jiami);
                                 System.out.println(String.valueOf(d2.IDv));
                                 System.out.println(String.valueOf(a2jiami));
+
                                 byte[] d2fb = JavaStruct.pack(d2);
                                 byte[] d2jiami = new MainBody(d2fb, String.valueOf(tickettgs.KcTgs), 1).mainBody();
                                 PackageTgstoC c2 = new PackageTgstoC(d2jiami);
                                 byte[] c2fb = JavaStruct.pack(c2);
                                 System.out.println(Arrays.toString(c2fb));
+
                                 socket2.getOutputStream().write(c2fb);
                                 socket2.shutdownOutput();
                         } else {
-                                log.Log.AuthLog(IDtgs, 1, String.valueOf(tickettgs.IDc));
+                                log.Log.AuthLog(IDtgs, 1, String.valueOf(tickettgs.IdClient));
                                 System.out.println("非法入侵！");
                         }
                 } catch (IOException | StructException e) {
@@ -115,7 +123,7 @@ public class TGS implements Runnable {
                 byte[] buffer = new byte[1024];
 
                 try {
-                        serverSocket = new ServerSocket(8888); // 绑定到端口8888的服务器套接字
+                        serverSocket = new ServerSocket(8888); // 绑定到端口8888的TGS服务器套接字
                         System.out.println("TGS服务器启动");
                         while (true) {
                                 Socket socket = serverSocket.accept();

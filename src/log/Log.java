@@ -19,39 +19,39 @@ public class Log {
      *
      * @param status=0/1,0代表注册失败，1代表注册成功
      */
-    public static void registerLog(int status, String IDc) {
+    public static void registerLog(int status, String IdClient) {
         String className = new Exception().getStackTrace()[1].getClassName();
         Logger LOGGER = Logger.getLogger(className);
         if (status == 0)
-            LOGGER.info("客户端" + IDc + "注册成功");
+            LOGGER.info("客户端" + IdClient + "注册成功");
         else
-            LOGGER.error("客户端" + IDc + "注册失败");
+            LOGGER.error("客户端" + IdClient + "注册失败");
     }
 
     /**
      *
      * @param status=0/1,0代表注册失败，1代表注册成功
      */
-    public static void loginLog(int status, String IDc) {
+    public static void loginLog(int status, String IdClient) {
         String className = new Exception().getStackTrace()[1].getClassName();
         Logger LOGGER = Logger.getLogger(className);
         if (status == 0)
-            LOGGER.info("客户端" + IDc + "登录成功");
+            LOGGER.info("客户端" + IdClient + "登录成功");
         else
-            LOGGER.error("客户端" + IDc + "登录失败");
+            LOGGER.error("客户端" + IdClient + "登录失败");
     }
 
     /**
      *
      * @param status=0/1,0代表注册失败，1代表注册成功
      */
-    public static void modifyPwdLog(int status, String IDc) {
+    public static void modifyPwdLog(int status, String IdClient) {
         String className = new Exception().getStackTrace()[1].getClassName();
         Logger LOGGER = Logger.getLogger(className);
         if (status == 0)
-            LOGGER.info("客户端" + IDc + "修改密码成功");
+            LOGGER.info("客户端" + IdClient + "修改密码成功");
         else
-            LOGGER.error("客户端" + IDc + "修改密码失败");
+            LOGGER.error("客户端" + IdClient + "修改密码失败");
     }
 
     /**
@@ -59,12 +59,12 @@ public class Log {
      * @param name=AS/TGS/V,C和谁认证
      * @param status=0/1，C和谁认证成功或失败，0失败，1成功
      */
-    public static void AuthLog(String name, int status, String IDc) {
+    public static void AuthLog(String name, int status, String IdClient) {
         String className = new Exception().getStackTrace()[1].getClassName();
         Logger LOGGER = Logger.getLogger(className);
         if (status == 0)
-            LOGGER.info("客户端" + IDc + "与" + name + "认证成功");
+            LOGGER.info("客户端" + IdClient + "与" + name + "认证成功");
         else
-            LOGGER.error("客户端" + IDc + "与" + name + "认证失败");
+            LOGGER.error("客户端" + IdClient + "与" + name + "认证失败");
     }
 }

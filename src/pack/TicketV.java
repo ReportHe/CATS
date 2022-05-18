@@ -1,5 +1,7 @@
 package pack;
 
+import java.security.Timestamp;
+
 import struct.ArrayLengthMarker;
 import struct.StructClass;
 import struct.StructField;
@@ -8,38 +10,38 @@ import struct.StructField;
 public class TicketV {
     @StructField(order = 0)
     @ArrayLengthMarker(fieldName = "Kcv")
-    public int KcvLen;
+    public int KeyClientServerLength;
 
     @StructField(order = 1)
-    public char[] Kcv;
+    public char[] KeyClientServer;
 
     @StructField(order = 2)
-    @ArrayLengthMarker(fieldName = "IDc")
-    public int IDcLen;
+    @ArrayLengthMarker(fieldName = "IdClient")
+    public int IdClientLength;
 
     @StructField(order = 3)
-    public char[] IDc;
+    public char[] IdClient;
 
     @StructField(order = 4)
-    @ArrayLengthMarker(fieldName = "ADc")
-    public int ADcLen;
+    @ArrayLengthMarker(fieldName = "AddressClient")
+    public int AddressClientLength;
 
     @StructField(order = 5)
-    public char[] ADc;
+    public char[] AddressClient;
 
     @StructField(order = 6)
     @ArrayLengthMarker(fieldName = "IDv")
-    public int IDvLen;
+    public int IdServerLength;
 
     @StructField(order = 7)
-    public char[] IDv;
+    public char[] IdServer;
 
     @StructField(order = 8)
     @ArrayLengthMarker(fieldName = "TS")
-    public int TSLen;
+    public int TimeStampLength;
 
     @StructField(order = 9)
-    public char[] TS;
+    public char[] TimeStamp;
 
     @StructField(order = 10)
     @ArrayLengthMarker(fieldName = "Lifetime")
@@ -48,18 +50,19 @@ public class TicketV {
     @StructField(order = 11)
     public char[] Lifetime;
 
-    public TicketV(String Kcv1, String IDc1, String ADc1, String IDv1, String TS1, String Lifetime1) {
-        this.KcvLen = Kcv1.length();
-        this.Kcv = Kcv1.toCharArray();
-        this.IDcLen = IDc1.length();
-        this.IDc = IDc1.toCharArray();
-        this.ADcLen = ADc1.length();
-        this.ADc = ADc1.toCharArray();
-        this.IDvLen = IDv1.length();
-        this.IDv = IDv1.toCharArray();
-        this.TSLen = TS1.length();
-        this.TS = TS1.toCharArray();
-        this.LifetimeLen = Lifetime1.length();
-        this.Lifetime = Lifetime1.toCharArray();
+    public TicketV(String KeyClientServer_, String IdClient_, String AddressClient_, String IdServer_,
+            String TimeStamp_, String Lifetime_) {
+        this.KeyClientServerLength = KeyClientServer_.length();
+        this.KeyClientServer = KeyClientServer_.toCharArray();
+        this.IdClientLength = IdClient_.length();
+        this.IdClient = IdClient_.toCharArray();
+        this.AddressClientLength = AddressClient_.length();
+        this.AddressClient = AddressClient_.toCharArray();
+        this.IdServerLength = IdServer_.length();
+        this.IdServer = IdServer_.toCharArray();
+        this.TimeStampLength = TimeStamp_.length();
+        this.TimeStamp = TimeStamp_.toCharArray();
+        this.LifetimeLen = Lifetime_.length();
+        this.Lifetime = Lifetime_.toCharArray();
     }
 }
