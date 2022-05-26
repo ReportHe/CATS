@@ -26,7 +26,7 @@ public class TGS implements Runnable {
                 this.socket2 = socket;
                 this.IdTgs = "192.168.43.205"; // TGS服务器IP地址
                 this.KeyClientServer = "12345678"; // Client和Server共享的会话密钥
-                this.IdServer = "127.0.0.1"; // 服务器IP地址
+                this.IdServer = "192.168.43.75"; // 服务器IP地址
         }
 
         @Override
@@ -102,7 +102,6 @@ public class TGS implements Runnable {
                                 byte[] ticketv_encrypt = new MainBody(ticketv_pack, KEY, 1).mainBody();
 
                                 Date date2 = new Date();
-                                // SimpleDateFormat sdf2 = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
                                 TimeStamp4 = sdf.format(date2);
 
                                 // 打包(转换成字节流形式)整包并加密
@@ -113,11 +112,11 @@ public class TGS implements Runnable {
                                                 KeyClientServer, IdServer, TimeStamp4, ticketv_encrypt);
 
                                 // 测试
-                                System.out.println("Hello World1!");
                                 System.out.println(String.valueOf(package_tgs_to_c_encrypt_key_client_tgs.IdServer));
                                 System.out.println(String.valueOf(ticketv_encrypt));
 
                                 byte[] package_tgs_to_c_pack = JavaStruct.pack(package_tgs_to_c_encrypt_key_client_tgs);
+
                                 byte[] data_encrypt = new MainBody(package_tgs_to_c_pack,
                                                 String.valueOf(tickettgs.KeyClientTgs), 1)
                                                 .mainBody();
@@ -128,7 +127,6 @@ public class TGS implements Runnable {
                                                 + String.valueOf(package_send.EncryptKeyClientTgs));
                                 byte[] package_pack = JavaStruct.pack(package_send);
 
-                                System.out.println("Hello World!2");
                                 System.out.println(Arrays.toString(package_pack));
 
                                 socket2.getOutputStream().write(package_pack);

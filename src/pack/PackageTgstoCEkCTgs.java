@@ -39,7 +39,7 @@ public class PackageTgstoCEkCTgs {
 
     public PackageTgstoCEkCTgs(String KeyClientServer_, String IdServer_, String TimeStamp_, byte[] TicketServer_) {
         this.KeyClientServerLength = KeyClientServer_.length();
-        this.KeyClientServer = IdServer_.toCharArray();
+        this.KeyClientServer = KeyClientServer_.toCharArray();
         this.IdServerLength = IdServer_.length();
         this.IdServer = IdServer_.toCharArray();
         this.TimeStampLength = TimeStamp_.length();
