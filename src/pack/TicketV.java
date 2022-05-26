@@ -9,7 +9,7 @@ import struct.StructField;
 @StructClass
 public class TicketV {
     @StructField(order = 0)
-    @ArrayLengthMarker(fieldName = "Kcv")
+    @ArrayLengthMarker(fieldName = "KeyClientServer")
     public int KeyClientServerLength;
 
     @StructField(order = 1)
@@ -30,14 +30,14 @@ public class TicketV {
     public char[] AddressClient;
 
     @StructField(order = 6)
-    @ArrayLengthMarker(fieldName = "IDv")
+    @ArrayLengthMarker(fieldName = "IdServer")
     public int IdServerLength;
 
     @StructField(order = 7)
     public char[] IdServer;
 
     @StructField(order = 8)
-    @ArrayLengthMarker(fieldName = "TS")
+    @ArrayLengthMarker(fieldName = "TimeStamp")
     public int TimeStampLength;
 
     @StructField(order = 9)

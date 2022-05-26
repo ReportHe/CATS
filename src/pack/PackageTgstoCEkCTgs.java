@@ -7,45 +7,45 @@ import struct.StructField;
 @StructClass
 public class PackageTgstoCEkCTgs {
     @StructField(order = 0)
-    @ArrayLengthMarker(fieldName = "Kcv")
-    public int KcvLen;
+    @ArrayLengthMarker(fieldName = "KeyClientServer")
+    public int KeyClientServerLength;
 
     @StructField(order = 1)
-    public char[] Kcv;
+    public char[] KeyClientServer;
 
     @StructField(order = 2)
-    @ArrayLengthMarker(fieldName = "IDv")
-    public int IDvLen;
+    @ArrayLengthMarker(fieldName = "IdServer")
+    public int IdServerLength;
 
     @StructField(order = 3)
-    public char[] IDv;
+    public char[] IdServer;
 
     @StructField(order = 4)
-    @ArrayLengthMarker(fieldName = "TS")
-    public int TSLen;
+    @ArrayLengthMarker(fieldName = "TimeStamp")
+    public int TimeStampLength;
 
     @StructField(order = 5)
-    public char[] TS;
+    public char[] TimeStamp;
 
     @StructField(order = 6)
-    @ArrayLengthMarker(fieldName = "TicketV")
-    public int TicketVLen;
+    @ArrayLengthMarker(fieldName = "TicketServer")
+    public int TicketServerLength;
 
     @StructField(order = 7)
-    public byte[] TicketV;
+    public byte[] TicketServer;
 
     @StructField(order = 8)
     public byte[] redundancy;
 
     public PackageTgstoCEkCTgs(String KeyClientServer_, String IdServer_, String TimeStamp_, byte[] TicketServer_) {
-        this.KcvLen = KeyClientServer_.length();
-        this.Kcv = IdServer_.toCharArray();
-        this.IDvLen = IdServer_.length();
-        this.IDv = IdServer_.toCharArray();
-        this.TSLen = TimeStamp_.length();
-        this.TS = TimeStamp_.toCharArray();
-        this.TicketVLen = TicketServer_.length;
-        this.TicketV = TicketServer_;
+        this.KeyClientServerLength = KeyClientServer_.length();
+        this.KeyClientServer = IdServer_.toCharArray();
+        this.IdServerLength = IdServer_.length();
+        this.IdServer = IdServer_.toCharArray();
+        this.TimeStampLength = TimeStamp_.length();
+        this.TimeStamp = TimeStamp_.toCharArray();
+        this.TicketServerLength = TicketServer_.length;
+        this.TicketServer = TicketServer_;
         this.redundancy = new byte[10];
     }
 }

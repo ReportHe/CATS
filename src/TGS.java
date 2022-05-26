@@ -10,24 +10,23 @@ import java.util.Date;
 import des.MainBody;
 import struct.JavaStruct;
 import struct.StructException;
-import javax.net.ssl.CertPathTrustManagerParameters;
 
 public class TGS implements Runnable {
         private Socket socket2;
         private static byte[] packageReceived;
         static String KEY = "12345678";
-        private String IDtgs;
-        private String KCV;
-        private String IDV;
+        private String IdTgs;
+        private String KeyClientServer;
+        private String IdServer;
         private String Lifetime4 = "10s";
-        private String TS4;
-        private String TS;
+        private String TimeStamp4;
+        private String TimeStamp;
 
         public TGS(Socket socket) {
                 this.socket2 = socket;
-                this.IDtgs = "172.20.10.7"; // TGS服务器IP地址：172.24.32.1
-                this.KCV = "12345678";
-                this.IDV = "172.20.10.7"; // 服务器IP地址
+                this.IdTgs = "192.168.43.205"; // TGS服务器IP地址
+                this.KeyClientServer = "12345678"; // Client和Server共享的会话密钥
+                this.IdServer = "127.0.0.1"; // 服务器IP地址
         }
 
         @Override
@@ -38,10 +37,12 @@ public class TGS implements Runnable {
 
                 try {
                         while ((len = socket2.getInputStream().read(buffer)) != -1) { // 将套接字中的内容读到buffer中
+                                System.out.println("len = " + len);
                                 for (int i = 0; i < len; i++) {
                                         TmpArray.add(buffer[i]); // ArrayList类的add方法将buffer中的数据添加到ArrayList
                                 }
                         }
+
                         TmpArraySize = TmpArray.size();
                         packageReceived = new byte[TmpArraySize];
                         for (int i = 0; i < TmpArraySize; i++) {
@@ -61,56 +62,79 @@ public class TGS implements Runnable {
                         // 解整个包
                         JavaStruct.unpack(packagectotgs, packageReceived); // 将packageReceived字节流解包成packageCtoTgs结构体形式
 
-                        // 提取packagectotgs中的TicketTgs和Authenticator部分并解密到字符数组中
+                        // 提取packagectotgs中的TicketTgs部分并解密到字符数组TGS_ticket中
                         TGS_ticket = new MainBody(packagectotgs.TicketTgs, KEY, 0).mainBody(); // TGS解密从Client发送过来的包的票据部分
-                        TGS_authenticator = new MainBody(packagectotgs.Authenticator, new String(tickettgs.KcTgs), 0)
-                                        .mainBody(); // TGS解密从Client发送过来的包的Authenticator部分
-
-                        // 解整包中的TGS_ticket和TGS_authenticator部分
+                        // 解字符数组TGS_ticket到结构体tickettgs中
                         JavaStruct.unpack(tickettgs, TGS_ticket); // 将解密后的票据部分的字节流形式解包成TicketTgs结构体形式
+
+                        // TGS解密从Client发送过来的包的Authenticator部分
+                        TGS_authenticator = new MainBody(packagectotgs.Authenticator,
+                                        new String(tickettgs.KeyClientTgs), 0)
+                                        .mainBody();
+                        // 解字符数组TGS_authenticator到结构体authenticator中
                         JavaStruct.unpack(authenticator, TGS_authenticator);
 
-                        System.out.println(String.valueOf(tickettgs.IdClient) + "\t"
-                                        + String.valueOf(authenticator.IdClient)
-                                        + "\t"
-                                        + String.valueOf(tickettgs.AddressClient) + "\t"
-                                        + String.valueOf(authenticator.AddressClient));
+                        log.Log.PrintPackageCToTgs(packagectotgs.IdServer, tickettgs, authenticator);
 
                         if (Arrays.equals(tickettgs.IdClient, authenticator.IdClient)
                                         && Arrays.equals(tickettgs.AddressClient, authenticator.AddressClient))// 比对票据和认证中的信息是否核对成功，成功则发送包
                         {
-                                log.Log.AuthLog(IDtgs, 0, String.valueOf(tickettgs.IdClient));
+                                log.Log.AuthLog(IdTgs, 0, String.valueOf(tickettgs.IdClient));
+
                                 System.out.println("用户认证成功!");
 
-                                //打包票据并加密
-                                Date date1 = new Date(0);   //返回自1970年1月1日零时以来的毫秒数
-                                SimpleDateFormat df1 = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
-                                TS = df1.format(date1);   //以上面的格式输出字符串形式的时间戳
-                                System.out.println(IDV);
-                                TicketV a2 = new TicketV(KCV, String.valueOf(tickettgs.IdClient),
-                                                String.valueOf(tickettgs.AddressClient), IDV, TS,
-                                                Lifetime4); //
-                                byte[] a2fb = JavaStruct.pack(a2);
-                                byte[] a2jiami = new MainBody(a2fb, KEY, 1).mainBody();
+                                Date date1 = new Date(); // 获取当前时间(返回自1970年1月1日零时以来的毫秒数)
+                                SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+                                TimeStamp = sdf.format(date1); // 格式化时间
 
-                                //
-                                Date date = new Date(0);
-                                SimpleDateFormat df = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
-                                TS4 = df.format(date);
-                                PackageTgstoCEkCTgs d2 = new PackageTgstoCEkCTgs(KCV, IDV, TS4, a2jiami);
-                                System.out.println(String.valueOf(d2.IDv));
-                                System.out.println(String.valueOf(a2jiami));
+                                System.out.println("IdServer = " + IdServer);
 
-                                byte[] d2fb = JavaStruct.pack(d2);
-                                byte[] d2jiami = new MainBody(d2fb, String.valueOf(tickettgs.KcTgs), 1).mainBody();
-                                PackageTgstoC c2 = new PackageTgstoC(d2jiami);
-                                byte[] c2fb = JavaStruct.pack(c2);
-                                System.out.println(Arrays.toString(c2fb));
+                                // 打包票据并加密
+                                System.out.println("KeyClientServer = " + KeyClientServer + "IdClient = "
+                                                + String.valueOf(tickettgs.IdClient)
+                                                + "AddressClient = " + String.valueOf(tickettgs.AddressClient)
+                                                + "IdServer = " + IdServer + "TimeStamp = " + TimeStamp + "LifeTime4 = "
+                                                + Lifetime4);
+                                TicketV ticketv = new TicketV(KeyClientServer, String.valueOf(tickettgs.IdClient),
+                                                String.valueOf(tickettgs.AddressClient), IdServer, TimeStamp,
+                                                Lifetime4);
+                                byte[] ticketv_pack = JavaStruct.pack(ticketv);
+                                byte[] ticketv_encrypt = new MainBody(ticketv_pack, KEY, 1).mainBody();
 
-                                socket2.getOutputStream().write(c2fb);
+                                Date date2 = new Date();
+                                // SimpleDateFormat sdf2 = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+                                TimeStamp4 = sdf.format(date2);
+
+                                // 打包(转换成字节流形式)整包并加密
+                                System.out.println("KeyClientServer = " + KeyClientServer + "IdServer = " + IdServer
+                                                + "TimeStamp4 = " + TimeStamp4
+                                                + "ticketv_encrypt = " + ticketv_encrypt);
+                                PackageTgstoCEkCTgs package_tgs_to_c_encrypt_key_client_tgs = new PackageTgstoCEkCTgs(
+                                                KeyClientServer, IdServer, TimeStamp4, ticketv_encrypt);
+
+                                // 测试
+                                System.out.println("Hello World1!");
+                                System.out.println(String.valueOf(package_tgs_to_c_encrypt_key_client_tgs.IdServer));
+                                System.out.println(String.valueOf(ticketv_encrypt));
+
+                                byte[] package_tgs_to_c_pack = JavaStruct.pack(package_tgs_to_c_encrypt_key_client_tgs);
+                                byte[] data_encrypt = new MainBody(package_tgs_to_c_pack,
+                                                String.valueOf(tickettgs.KeyClientTgs), 1)
+                                                .mainBody();
+
+                                // 加上状态位打包整包准备发送
+                                PackageTgstoC package_send = new PackageTgstoC(data_encrypt);
+                                System.out.println("status =" + package_send.status + "EncryptKeyClientTgs"
+                                                + String.valueOf(package_send.EncryptKeyClientTgs));
+                                byte[] package_pack = JavaStruct.pack(package_send);
+
+                                System.out.println("Hello World!2");
+                                System.out.println(Arrays.toString(package_pack));
+
+                                socket2.getOutputStream().write(package_pack);
                                 socket2.shutdownOutput();
                         } else {
-                                log.Log.AuthLog(IDtgs, 1, String.valueOf(tickettgs.IdClient));
+                                log.Log.AuthLog(IdTgs, 1, String.valueOf(tickettgs.IdClient));
                                 System.out.println("非法入侵！");
                         }
                 } catch (IOException | StructException e) {
@@ -120,7 +144,7 @@ public class TGS implements Runnable {
 
         public static void main(String[] args) throws Exception {
                 ServerSocket serverSocket;
-                byte[] buffer = new byte[1024];
+                // byte[] buffer = new byte[1024];
 
                 try {
                         serverSocket = new ServerSocket(8888); // 绑定到端口8888的TGS服务器套接字
