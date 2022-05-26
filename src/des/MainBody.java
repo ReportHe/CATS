@@ -10,8 +10,6 @@ import java.util.Arrays;
  * byte[] c = new MainBody(TEXT.getBytes(), KEY, 1).mainBody();//
  * 加密，最后的字节数是8的倍数，根据des加密原理可得
  * byte[] p = new MainBody(c, KEY, 0).mainBody();// 解密
- * 
- * @author zhz
  */
 
 public class MainBody {

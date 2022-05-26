@@ -1,11 +1,5 @@
 package des;
 
-/**
- * 存储置换、压缩、扩展和S盒表
- * 
- * @author zhz
- */
-
 public final class Table {
 
 	/**

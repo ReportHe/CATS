@@ -3,11 +3,14 @@ package log;
 import org.apache.log4j.Logger;
 
 import pack.PackageCtoTgs;
+import pack.PackageTgstoC;
 import pack.TicketTgs;
+import pack.TicketV;
 
 import java.security.Timestamp;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
+import java.util.Arrays;
 import java.util.Date;
 
 public class Log {
@@ -55,7 +58,21 @@ public class Log {
                 "\n" + "Client生成的时间戳：" + TimeStamp2Date(String.valueOf(auth.TimeStamp)) + "\n");
     }
 
-    // 时间戳转换为日期格式
+    public static void PrintPackageTgsToC(TicketV ticket, PackageTgstoC packages) {
+        String className = new Exception().getStackTrace()[1].getClassName();
+        Logger LOGGER = Logger.getLogger(className);
+
+        LOGGER.info("PackageTgsToC --> Ticketv:\n" +
+                "Tgs生成的Client与Server的会话密钥：" + String.valueOf(ticket.KeyClientServer) + "\n" +
+                "Server的标识(Server的网络地址)" + String.valueOf(ticket.IdServer) + "\n" +
+                "Client的标识(账号)：" + String.valueOf(ticket.IdClient) + "\n" +
+                "时间戳(票据签发时间)：" + TimeStamp2Date(String.valueOf(ticket.TimeStamp)) + "\n" +
+                "票据的有效期：" + TimeStamp2Date(String.valueOf(ticket.Lifetime)) + "\n" +
+                "加密后的报文内容(二进制)" + packages.EncryptKeyClientTgs);
+        // Arrays.toString(packages.EncryptKeyClientTgs);
+    }
+
+    // 将时间戳转换为日期格式
     public static String TimeStamp2Date(String time) {
         Long timeLong = Long.parseLong(time);
         SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");// 要转换的时间格式

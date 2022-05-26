@@ -4,8 +4,6 @@ import java.io.UnsupportedEncodingException;
 
 /**
  * 产生子密钥
- * 
- * @author zhz
  */
 
 public class GenerateSubkeys {

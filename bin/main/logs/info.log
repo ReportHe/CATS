@@ -78,3 +78,307 @@ Client生成的时间戳：2022-05-26 13:54:48
 
 2022-05-26 13:54:50 下午 [Thread: Thread-1][ Class:TGS >> Method: log.Log.AuthLog(Log.java:35) ]
 INFO:客户端1111111111与192.168.43.205认证成功
+2022-05-26 14:59:52 下午 [Thread: Thread-0][ Class:TGS >> Method: log.Log.PrintPackageCToTgs(Log.java:44) ]
+INFO:服务器的标识(服务器的网络地址)：192.168.43.75
+PackageCToTgs --> Ticket:
+AS生成的C与Tgs的会话密钥：12345678
+Client的标识(账号)：1111111111
+Client的网络地址：192.168.43.38
+Tgs的标识(Tgs的网络地址)：192.168.43.205
+时间戳(票据签发时间)：2022-05-26 14:59:51
+票据的有效期：2022-05-26 14:59:51
+PackageCToTgs --> Authenticator:
+Client的标识(账号)：1111111111
+Client的网络地址：192.168.43.38
+Client生成的时间戳：2022-05-26 14:59:51
+
+2022-05-26 14:59:52 下午 [Thread: Thread-0][ Class:TGS >> Method: log.Log.AuthLog(Log.java:35) ]
+INFO:客户端1111111111与192.168.43.205认证成功
+2022-05-26 14:59:59 下午 [Thread: Thread-1][ Class:TGS >> Method: log.Log.PrintPackageCToTgs(Log.java:44) ]
+INFO:服务器的标识(服务器的网络地址)：192.168.43.75
+PackageCToTgs --> Ticket:
+AS生成的C与Tgs的会话密钥：12345678
+Client的标识(账号)：2222222222
+Client的网络地址：192.168.43.205
+Tgs的标识(Tgs的网络地址)：192.168.43.205
+时间戳(票据签发时间)：2022-05-26 14:59:58
+票据的有效期：2022-05-26 14:59:58
+PackageCToTgs --> Authenticator:
+Client的标识(账号)：2222222222
+Client的网络地址：192.168.43.38
+Client生成的时间戳：2022-05-26 14:59:59
+
+2022-05-26 14:59:59 下午 [Thread: Thread-1][ Class:TGS >> Method: log.Log.AuthLog(Log.java:37) ]
+ERROR:客户端2222222222与192.168.43.205认证失败
+2022-05-26 15:00:52 下午 [Thread: Thread-2][ Class:TGS >> Method: log.Log.PrintPackageCToTgs(Log.java:44) ]
+INFO:服务器的标识(服务器的网络地址)：192.168.43.75
+PackageCToTgs --> Ticket:
+AS生成的C与Tgs的会话密钥：12345678
+Client的标识(账号)：2222222222
+Client的网络地址：192.168.43.205
+Tgs的标识(Tgs的网络地址)：192.168.43.205
+时间戳(票据签发时间)：2022-05-26 15:00:52
+票据的有效期：2022-05-26 15:00:52
+PackageCToTgs --> Authenticator:
+Client的标识(账号)：2222222222
+Client的网络地址：192.168.43.38
+Client生成的时间戳：2022-05-26 15:00:52
+
+2022-05-26 15:00:52 下午 [Thread: Thread-2][ Class:TGS >> Method: log.Log.AuthLog(Log.java:37) ]
+ERROR:客户端2222222222与192.168.43.205认证失败
+2022-05-26 15:10:19 下午 [Thread: Thread-3][ Class:TGS >> Method: log.Log.PrintPackageCToTgs(Log.java:44) ]
+INFO:服务器的标识(服务器的网络地址)：192.168.43.75
+PackageCToTgs --> Ticket:
+AS生成的C与Tgs的会话密钥：12345678
+Client的标识(账号)：3333333333
+Client的网络地址：192.168.43.205
+Tgs的标识(Tgs的网络地址)：192.168.43.205
+时间戳(票据签发时间)：2022-05-26 15:10:18
+票据的有效期：2022-05-26 15:10:18
+PackageCToTgs --> Authenticator:
+Client的标识(账号)：3333333333
+Client的网络地址：192.168.43.38
+Client生成的时间戳：2022-05-26 15:10:19
+
+2022-05-26 15:10:19 下午 [Thread: Thread-3][ Class:TGS >> Method: log.Log.AuthLog(Log.java:37) ]
+ERROR:客户端3333333333与192.168.43.205认证失败
+2022-05-26 15:12:48 下午 [Thread: Thread-4][ Class:TGS >> Method: log.Log.PrintPackageCToTgs(Log.java:44) ]
+INFO:服务器的标识(服务器的网络地址)：192.168.43.75
+PackageCToTgs --> Ticket:
+AS生成的C与Tgs的会话密钥：12345678
+Client的标识(账号)：1111111111
+Client的网络地址：192.168.43.205
+Tgs的标识(Tgs的网络地址)：192.168.43.205
+时间戳(票据签发时间)：2022-05-26 15:12:47
+票据的有效期：2022-05-26 15:12:47
+PackageCToTgs --> Authenticator:
+Client的标识(账号)：1111111111
+Client的网络地址：192.168.43.205
+Client生成的时间戳：2022-05-26 15:12:48
+
+2022-05-26 15:12:48 下午 [Thread: Thread-4][ Class:TGS >> Method: log.Log.AuthLog(Log.java:35) ]
+INFO:客户端1111111111与192.168.43.205认证成功
+2022-05-26 15:13:46 下午 [Thread: Thread-5][ Class:TGS >> Method: log.Log.PrintPackageCToTgs(Log.java:44) ]
+INFO:服务器的标识(服务器的网络地址)：192.168.43.75
+PackageCToTgs --> Ticket:
+AS生成的C与Tgs的会话密钥：12345678
+Client的标识(账号)：1111111111
+Client的网络地址：192.168.43.205
+Tgs的标识(Tgs的网络地址)：192.168.43.205
+时间戳(票据签发时间)：2022-05-26 15:13:46
+票据的有效期：2022-05-26 15:13:46
+PackageCToTgs --> Authenticator:
+Client的标识(账号)：1111111111
+Client的网络地址：192.168.43.205
+Client生成的时间戳：2022-05-26 15:13:46
+
+2022-05-26 15:13:46 下午 [Thread: Thread-5][ Class:TGS >> Method: log.Log.AuthLog(Log.java:35) ]
+INFO:客户端1111111111与192.168.43.205认证成功
+2022-05-26 15:15:10 下午 [Thread: Thread-6][ Class:TGS >> Method: log.Log.PrintPackageCToTgs(Log.java:44) ]
+INFO:服务器的标识(服务器的网络地址)：192.168.43.75
+PackageCToTgs --> Ticket:
+AS生成的C与Tgs的会话密钥：12345678
+Client的标识(账号)：1111111111
+Client的网络地址：192.168.43.205
+Tgs的标识(Tgs的网络地址)：192.168.43.205
+时间戳(票据签发时间)：2022-05-26 15:15:10
+票据的有效期：2022-05-26 15:15:10
+PackageCToTgs --> Authenticator:
+Client的标识(账号)：1111111111
+Client的网络地址：192.168.43.205
+Client生成的时间戳：2022-05-26 15:15:10
+
+2022-05-26 15:15:10 下午 [Thread: Thread-6][ Class:TGS >> Method: log.Log.AuthLog(Log.java:35) ]
+INFO:客户端1111111111与192.168.43.205认证成功
+2022-05-26 15:16:30 下午 [Thread: Thread-7][ Class:TGS >> Method: log.Log.PrintPackageCToTgs(Log.java:44) ]
+INFO:服务器的标识(服务器的网络地址)：192.168.43.75
+PackageCToTgs --> Ticket:
+AS生成的C与Tgs的会话密钥：12345678
+Client的标识(账号)：1111111111
+Client的网络地址：192.168.43.205
+Tgs的标识(Tgs的网络地址)：192.168.43.205
+时间戳(票据签发时间)：2022-05-26 15:16:30
+票据的有效期：2022-05-26 15:16:30
+PackageCToTgs --> Authenticator:
+Client的标识(账号)：1111111111
+Client的网络地址：192.168.43.205
+Client生成的时间戳：2022-05-26 15:16:30
+
+2022-05-26 15:16:30 下午 [Thread: Thread-7][ Class:TGS >> Method: log.Log.AuthLog(Log.java:35) ]
+INFO:客户端1111111111与192.168.43.205认证成功
+2022-05-26 15:17:40 下午 [Thread: Thread-8][ Class:TGS >> Method: log.Log.PrintPackageCToTgs(Log.java:44) ]
+INFO:服务器的标识(服务器的网络地址)：192.168.43.75
+PackageCToTgs --> Ticket:
+AS生成的C与Tgs的会话密钥：12345678
+Client的标识(账号)：3333333333
+Client的网络地址：192.168.43.248
+Tgs的标识(Tgs的网络地址)：192.168.43.205
+时间戳(票据签发时间)：2022-05-26 15:17:40
+票据的有效期：2022-05-26 15:17:40
+PackageCToTgs --> Authenticator:
+Client的标识(账号)：3333333333
+Client的网络地址：192.168.43.248
+Client生成的时间戳：2022-05-26 15:17:40
+
+2022-05-26 15:17:40 下午 [Thread: Thread-8][ Class:TGS >> Method: log.Log.AuthLog(Log.java:35) ]
+INFO:客户端3333333333与192.168.43.205认证成功
+2022-05-26 15:18:30 下午 [Thread: Thread-9][ Class:TGS >> Method: log.Log.PrintPackageCToTgs(Log.java:44) ]
+INFO:服务器的标识(服务器的网络地址)：192.168.43.75
+PackageCToTgs --> Ticket:
+AS生成的C与Tgs的会话密钥：12345678
+Client的标识(账号)：3333333333
+Client的网络地址：192.168.43.248
+Tgs的标识(Tgs的网络地址)：192.168.43.205
+时间戳(票据签发时间)：2022-05-26 15:18:30
+票据的有效期：2022-05-26 15:18:30
+PackageCToTgs --> Authenticator:
+Client的标识(账号)：3333333333
+Client的网络地址：192.168.43.248
+Client生成的时间戳：2022-05-26 15:18:30
+
+2022-05-26 15:18:30 下午 [Thread: Thread-9][ Class:TGS >> Method: log.Log.AuthLog(Log.java:35) ]
+INFO:客户端3333333333与192.168.43.205认证成功
+2022-05-26 15:24:27 下午 [Thread: Thread-10][ Class:TGS >> Method: log.Log.PrintPackageCToTgs(Log.java:44) ]
+INFO:服务器的标识(服务器的网络地址)：192.168.43.75
+PackageCToTgs --> Ticket:
+AS生成的C与Tgs的会话密钥：12345678
+Client的标识(账号)：3333333333
+Client的网络地址：192.168.43.205
+Tgs的标识(Tgs的网络地址)：192.168.43.205
+时间戳(票据签发时间)：2022-05-26 15:24:27
+票据的有效期：2022-05-26 15:24:27
+PackageCToTgs --> Authenticator:
+Client的标识(账号)：3333333333
+Client的网络地址：192.168.43.205
+Client生成的时间戳：2022-05-26 15:24:27
+
+2022-05-26 15:24:27 下午 [Thread: Thread-10][ Class:TGS >> Method: log.Log.AuthLog(Log.java:35) ]
+INFO:客户端3333333333与192.168.43.205认证成功
+2022-05-26 15:33:20 下午 [Thread: Thread-11][ Class:TGS >> Method: log.Log.PrintPackageCToTgs(Log.java:44) ]
+INFO:服务器的标识(服务器的网络地址)：192.168.43.75
+PackageCToTgs --> Ticket:
+AS生成的C与Tgs的会话密钥：12345678
+Client的标识(账号)：1111111111
+Client的网络地址：192.168.43.38
+Tgs的标识(Tgs的网络地址)：192.168.43.205
+时间戳(票据签发时间)：2022-05-26 15:33:20
+票据的有效期：2022-05-26 15:33:20
+PackageCToTgs --> Authenticator:
+Client的标识(账号)：1111111111
+Client的网络地址：192.168.43.38
+Client生成的时间戳：2022-05-26 15:33:19
+
+2022-05-26 15:33:20 下午 [Thread: Thread-11][ Class:TGS >> Method: log.Log.AuthLog(Log.java:35) ]
+INFO:客户端1111111111与192.168.43.205认证成功
+2022-05-26 15:33:48 下午 [Thread: Thread-12][ Class:TGS >> Method: log.Log.PrintPackageCToTgs(Log.java:44) ]
+INFO:服务器的标识(服务器的网络地址)：192.168.43.75
+PackageCToTgs --> Ticket:
+AS生成的C与Tgs的会话密钥：12345678
+Client的标识(账号)：2222222222
+Client的网络地址：192.168.43.205
+Tgs的标识(Tgs的网络地址)：192.168.43.205
+时间戳(票据签发时间)：2022-05-26 15:33:48
+票据的有效期：2022-05-26 15:33:48
+PackageCToTgs --> Authenticator:
+Client的标识(账号)：2222222222
+Client的网络地址：192.168.43.205
+Client生成的时间戳：2022-05-26 15:33:48
+
+2022-05-26 15:33:48 下午 [Thread: Thread-12][ Class:TGS >> Method: log.Log.AuthLog(Log.java:35) ]
+INFO:客户端2222222222与192.168.43.205认证成功
+2022-05-26 15:34:45 下午 [Thread: Thread-13][ Class:TGS >> Method: log.Log.PrintPackageCToTgs(Log.java:44) ]
+INFO:服务器的标识(服务器的网络地址)：192.168.43.75
+PackageCToTgs --> Ticket:
+AS生成的C与Tgs的会话密钥：12345678
+Client的标识(账号)：2222222222
+Client的网络地址：192.168.43.205
+Tgs的标识(Tgs的网络地址)：192.168.43.205
+时间戳(票据签发时间)：2022-05-26 15:34:44
+票据的有效期：2022-05-26 15:34:44
+PackageCToTgs --> Authenticator:
+Client的标识(账号)：2222222222
+Client的网络地址：192.168.43.205
+Client生成的时间戳：2022-05-26 15:34:45
+
+2022-05-26 15:34:45 下午 [Thread: Thread-13][ Class:TGS >> Method: log.Log.AuthLog(Log.java:35) ]
+INFO:客户端2222222222与192.168.43.205认证成功
+2022-05-26 15:36:12 下午 [Thread: Thread-14][ Class:TGS >> Method: log.Log.PrintPackageCToTgs(Log.java:44) ]
+INFO:服务器的标识(服务器的网络地址)：192.168.43.75
+PackageCToTgs --> Ticket:
+AS生成的C与Tgs的会话密钥：12345678
+Client的标识(账号)：1111111111
+Client的网络地址：192.168.43.38
+Tgs的标识(Tgs的网络地址)：192.168.43.205
+时间戳(票据签发时间)：2022-05-26 15:36:11
+票据的有效期：2022-05-26 15:36:11
+PackageCToTgs --> Authenticator:
+Client的标识(账号)：1111111111
+Client的网络地址：192.168.43.38
+Client生成的时间戳：2022-05-26 15:36:10
+
+2022-05-26 15:36:12 下午 [Thread: Thread-14][ Class:TGS >> Method: log.Log.AuthLog(Log.java:35) ]
+INFO:客户端1111111111与192.168.43.205认证成功
+2022-05-26 15:36:32 下午 [Thread: Thread-15][ Class:TGS >> Method: log.Log.PrintPackageCToTgs(Log.java:44) ]
+INFO:服务器的标识(服务器的网络地址)：192.168.43.75
+PackageCToTgs --> Ticket:
+AS生成的C与Tgs的会话密钥：12345678
+Client的标识(账号)：2222222222
+Client的网络地址：192.168.43.205
+Tgs的标识(Tgs的网络地址)：192.168.43.205
+时间戳(票据签发时间)：2022-05-26 15:36:31
+票据的有效期：2022-05-26 15:36:31
+PackageCToTgs --> Authenticator:
+Client的标识(账号)：2222222222
+Client的网络地址：192.168.43.205
+Client生成的时间戳：2022-05-26 15:36:32
+
+2022-05-26 15:36:32 下午 [Thread: Thread-15][ Class:TGS >> Method: log.Log.AuthLog(Log.java:35) ]
+INFO:客户端2222222222与192.168.43.205认证成功
+2022-05-26 15:39:30 下午 [Thread: Thread-16][ Class:TGS >> Method: log.Log.PrintPackageCToTgs(Log.java:44) ]
+INFO:服务器的标识(服务器的网络地址)：192.168.43.75
+PackageCToTgs --> Ticket:
+AS生成的C与Tgs的会话密钥：12345678
+Client的标识(账号)：1472583690
+Client的网络地址：192.168.43.75
+Tgs的标识(Tgs的网络地址)：192.168.43.205
+时间戳(票据签发时间)：2022-05-26 15:39:30
+票据的有效期：2022-05-26 15:39:30
+PackageCToTgs --> Authenticator:
+Client的标识(账号)：1472583690
+Client的网络地址：192.168.43.75
+Client生成的时间戳：2022-05-26 15:39:30
+
+2022-05-26 15:39:30 下午 [Thread: Thread-16][ Class:TGS >> Method: log.Log.AuthLog(Log.java:35) ]
+INFO:客户端1472583690与192.168.43.205认证成功
+2022-05-26 16:25:52 下午 [Thread: Thread-17][ Class:TGS >> Method: log.Log.PrintPackageCToTgs(Log.java:44) ]
+INFO:服务器的标识(服务器的网络地址)：192.168.43.75
+PackageCToTgs --> Ticket:
+AS生成的C与Tgs的会话密钥：12345678
+Client的标识(账号)：1111111111
+Client的网络地址：192.168.43.248
+Tgs的标识(Tgs的网络地址)：192.168.43.205
+时间戳(票据签发时间)：2022-05-26 16:25:51
+票据的有效期：2022-05-26 16:25:51
+PackageCToTgs --> Authenticator:
+Client的标识(账号)：1111111111
+Client的网络地址：192.168.43.248
+Client生成的时间戳：2022-05-26 16:25:51
+
+2022-05-26 16:25:52 下午 [Thread: Thread-17][ Class:TGS >> Method: log.Log.AuthLog(Log.java:35) ]
+INFO:客户端1111111111与192.168.43.205认证成功
+2022-05-26 16:29:55 下午 [Thread: Thread-18][ Class:TGS >> Method: log.Log.PrintPackageCToTgs(Log.java:44) ]
+INFO:服务器的标识(服务器的网络地址)：192.168.43.75
+PackageCToTgs --> Ticket:
+AS生成的C与Tgs的会话密钥：12345678
+Client的标识(账号)：1111111111
+Client的网络地址：192.168.43.248
+Tgs的标识(Tgs的网络地址)：192.168.43.205
+时间戳(票据签发时间)：2022-05-26 16:29:54
+票据的有效期：2022-05-26 16:29:54
+PackageCToTgs --> Authenticator:
+Client的标识(账号)：1111111111
+Client的网络地址：192.168.43.248
+Client生成的时间戳：2022-05-26 16:29:54
+
+2022-05-26 16:29:55 下午 [Thread: Thread-18][ Class:TGS >> Method: log.Log.AuthLog(Log.java:35) ]
+INFO:客户端1111111111与192.168.43.205认证成功

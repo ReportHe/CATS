@@ -87,14 +87,7 @@ public class TGS implements Runnable {
                                 SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
                                 TimeStamp = sdf.format(date1); // 格式化时间
 
-                                System.out.println("IdServer = " + IdServer);
-
                                 // 打包票据并加密
-                                System.out.println("KeyClientServer = " + KeyClientServer + "IdClient = "
-                                                + String.valueOf(tickettgs.IdClient)
-                                                + "AddressClient = " + String.valueOf(tickettgs.AddressClient)
-                                                + "IdServer = " + IdServer + "TimeStamp = " + TimeStamp + "LifeTime4 = "
-                                                + Lifetime4);
                                 TicketV ticketv = new TicketV(KeyClientServer, String.valueOf(tickettgs.IdClient),
                                                 String.valueOf(tickettgs.AddressClient), IdServer, TimeStamp,
                                                 Lifetime4);
@@ -105,29 +98,22 @@ public class TGS implements Runnable {
                                 TimeStamp4 = sdf.format(date2);
 
                                 // 打包(转换成字节流形式)整包并加密
-                                System.out.println("KeyClientServer = " + KeyClientServer + "IdServer = " + IdServer
-                                                + "TimeStamp4 = " + TimeStamp4
-                                                + "ticketv_encrypt = " + ticketv_encrypt);
                                 PackageTgstoCEkCTgs package_tgs_to_c_encrypt_key_client_tgs = new PackageTgstoCEkCTgs(
                                                 KeyClientServer, IdServer, TimeStamp4, ticketv_encrypt);
 
-                                // 测试
-                                System.out.println(String.valueOf(package_tgs_to_c_encrypt_key_client_tgs.IdServer));
-                                System.out.println(String.valueOf(ticketv_encrypt));
-
                                 byte[] package_tgs_to_c_pack = JavaStruct.pack(package_tgs_to_c_encrypt_key_client_tgs);
-
                                 byte[] data_encrypt = new MainBody(package_tgs_to_c_pack,
                                                 String.valueOf(tickettgs.KeyClientTgs), 1)
                                                 .mainBody();
 
                                 // 加上状态位打包整包准备发送
                                 PackageTgstoC package_send = new PackageTgstoC(data_encrypt);
-                                System.out.println("status =" + package_send.status + "EncryptKeyClientTgs"
-                                                + String.valueOf(package_send.EncryptKeyClientTgs));
+                                //System.out.println("status =" + package_send.status + "EncryptKeyClientTgs"
+                                //                + String.valueOf(package_send.EncryptKeyClientTgs));
                                 byte[] package_pack = JavaStruct.pack(package_send);
 
-                                System.out.println(Arrays.toString(package_pack));
+                                //System.out.println(Arrays.toString(package_pack));
+                                log.Log.PrintPackageTgsToC(ticketv, package_send);
 
                                 socket2.getOutputStream().write(package_pack);
                                 socket2.shutdownOutput();
@@ -142,8 +128,6 @@ public class TGS implements Runnable {
 
         public static void main(String[] args) throws Exception {
                 ServerSocket serverSocket;
-                // byte[] buffer = new byte[1024];
-
                 try {
                         serverSocket = new ServerSocket(8888); // 绑定到端口8888的TGS服务器套接字
                         System.out.println("TGS服务器启动");

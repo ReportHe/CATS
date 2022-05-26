@@ -4,8 +4,6 @@ import java.io.UnsupportedEncodingException;
 
 /**
  * 对明文（密文）进行分组
- * 
- * @author zhz
  */
 
 public class GroupText {

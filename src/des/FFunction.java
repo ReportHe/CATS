@@ -2,8 +2,6 @@ package des;
 
 /**
  * F轮函数
- * 
- * @author zhz
  */
 
 public class FFunction {
