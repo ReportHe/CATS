@@ -1,7 +1,5 @@
 package pack;
 
-import java.security.Timestamp;
-
 import struct.ArrayLengthMarker;
 import struct.StructClass;
 import struct.StructField;

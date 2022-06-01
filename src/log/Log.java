@@ -2,15 +2,12 @@ package log;
 
 import org.apache.log4j.Logger;
 
-import pack.PackageCtoTgs;
 import pack.PackageTgstoC;
 import pack.TicketTgs;
 import pack.TicketV;
 
-import java.security.Timestamp;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
-import java.util.Arrays;
 import java.util.Date;
 
 public class Log {
@@ -57,8 +54,7 @@ public class Log {
                 + String.valueOf(auth.AddressClient) +
                 "\n" + "Client生成的时间戳：" + TimeStamp2Date(String.valueOf(auth.TimeStamp)) + "\n");
     }
-
-    public static void PrintPackageTgsToC(TicketV ticket, PackageTgstoC packages) {
+    public static void PrintPackageTgsToC1(TicketV ticket, PackageTgstoC packages) {
         String className = new Exception().getStackTrace()[1].getClassName();
         Logger LOGGER = Logger.getLogger(className);
 
@@ -68,6 +64,19 @@ public class Log {
                 "Client的标识(账号)：" + String.valueOf(ticket.IdClient) + "\n" +
                 "时间戳(票据签发时间)：" + TimeStamp2Date(String.valueOf(ticket.TimeStamp)) + "\n" +
                 "票据的有效期：" + TimeStamp2Date(String.valueOf(ticket.Lifetime)) + "\n" +
+                "加密后的报文内容(二进制)" + packages.EncryptKeyClientTgs);
+        // Arrays.toString(packages.EncryptKeyClientTgs);
+    }
+    public static void PrintPackageTgsToC(TicketV ticket, PackageTgstoC packages) {
+        String className = new Exception().getStackTrace()[1].getClassName();
+        Logger LOGGER = Logger.getLogger(className);
+
+        LOGGER.info("PackageTgsToC --> Ticketv:\n" +
+                "Tgs生成的Client与Server的会话密钥：" + String.valueOf(ticket.KeyClientServer) + "\n" +
+                "Server的标识(Server的网络地址)" + String.valueOf(ticket.IdServer) + "\n" +
+                "Client的标识(账号)：" + String.valueOf(ticket.IdClient) + "\n" +
+                "时间戳(票据签发时间)：" + String.valueOf(ticket.TimeStamp) + "\n" +
+                "票据的有效期：" + String.valueOf(ticket.Lifetime) + "\n" +
                 "加密后的报文内容(二进制)" + packages.EncryptKeyClientTgs);
         // Arrays.toString(packages.EncryptKeyClientTgs);
     }
