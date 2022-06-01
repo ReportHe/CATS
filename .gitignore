@@ -1,0 +1,10 @@
+# 忽略任何目录下名为 xxx 的文件夹
+.idea/
+.vscode/
+bin/
+out/
+libs/
+main/
+
+# 忽略名为TGS.iml 文件
+TGS.iml
