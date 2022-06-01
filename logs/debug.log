@@ -1,0 +1,4 @@
+2022-06-01 09:48:39 上午 [Thread: JavaFX Application Thread][ Class:ClientWindow.ClientWindow >> Method: Utils.Log.sendPackageLog(Log.java:13) ]
+DEBUG:客户端IDc： 发送 PackageVtoCPublicMsg 到 127.0.0.1
+2022-06-01 09:48:57 上午 [Thread: JavaFX Application Thread][ Class:ClientWindow.ClientWindow >> Method: Utils.Log.sendPackageLog(Log.java:13) ]
+DEBUG:客户端IDc： 发送 PackageVtoCPublicMsg 到 127.0.0.1
