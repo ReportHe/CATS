@@ -206,6 +206,7 @@ public class MessageServer {
 		}
 	}
 	// 给所有客户发送聊天信息的线程
+
 	class SendMsgToClient extends Thread {
 		public void run() {
 			while (this.isAlive()) {
