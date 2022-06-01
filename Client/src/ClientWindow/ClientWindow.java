@@ -1,17 +1,11 @@
 package ClientWindow;
-<<<<<<< HEAD
-//#######
-//##################
+
 import Utils.Log;
 import Utils.MainBody;
 import Utils.RSA;
 import Utils.Util;
-import com.sun.xml.internal.ws.util.StringUtils;
 import entity.Msg;
 import javafx.application.Application;
-import javafx.beans.property.SimpleStringProperty;
-import javafx.beans.property.StringProperty;
-import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
@@ -23,7 +17,10 @@ import javafx.scene.image.Image;
 import javafx.scene.media.Media;
 import javafx.scene.media.MediaPlayer;
 import javafx.stage.Stage;
-import pack.*;
+import pack.PackageCtoVPublicMsg;
+import pack.PackageCtoVPublicMsgEkCV;
+import pack.PackageVtoCPublicMsg;
+import pack.PackageVtoCPublicMsgEkCV;
 import struct.JavaStruct;
 import struct.StructException;
 

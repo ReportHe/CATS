@@ -3,14 +3,9 @@ import struct.ArrayLengthMarker;
 import struct.StructClass;
 import struct.StructField;
 
-<<<<<<< HEAD
 /**
- * author
- *
+ * author：he
  */
-
-=======
->>>>>>> 94b2091e31dc2207db4b3b6462eb64cbdec5306c
 @StructClass
 public class Authenticator {
     @StructField(order = 0)
