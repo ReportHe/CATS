@@ -80,7 +80,7 @@ public class TGS implements Runnable {
                         // 解字符数组TGS_authenticator到结构体authenticator中
                         JavaStruct.unpack(authenticator, TGS_authenticator);
 
-                        //Log.PrintPackageCToTgs(packagectotgs.IdServer, tickettgs, authenticator);
+                        // Log.PrintPackageCToTgs(packagectotgs.IdServer, tickettgs, authenticator);
                         System.out.println("服务器的标识(服务器的网络地址)：" + String.valueOf(IdServer) + "\n"
                                         + "PackageCToTgs --> Ticket:\n" +
                                         "AS生成的C与Tgs的会话密钥：" + String.valueOf(tickettgs.KeyClientTgs) + "\n"
