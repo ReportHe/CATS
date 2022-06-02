@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="a0d02c6c-c5af-4df5-878d-dd5b0647c40d" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/../.idea/CATS-master.iml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/CATS-master.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/modules.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Client/src/LogRegWindow/LogRegWindow.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Client/src/LogRegWindow/LogRegWindow.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MessageServer.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../TGS/TGS.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../out/production/Client/ClientWindow/CWindow$ReceiveMsg.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../out/production/Client/ClientWindow/CWindow.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../out/production/Client/ClientWindow/ClientWindow$ReceiveMsg.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../out/production/Client/ClientWindow/ClientWindow.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../out/production/Client/LogRegWindow/LogRegWindow.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../out/production/Client/LogRegWindow/RegisterWindow.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../out/production/Client/PersonalManageWindow/ModifyPasswd.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../out/production/Client/PersonalManageWindow/PersonalManageWindow.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../out/production/Client/Test.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../out/production/Client/Utils/FFunction.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../out/production/Client/Utils/GenerateSubkeys.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../out/production/Client/Utils/GroupText.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../out/production/Client/Utils/Log.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../out/production/Client/Utils/MainBody.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../out/production/Client/Utils/RSA$pqException.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../out/production/Client/Utils/RSA.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../out/production/Client/Utils/Table.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../out/production/Client/Utils/Util.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../out/production/Client/entity/Msg.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../out/production/Client/pack/Authenticator.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../out/production/Client/pack/PackageAstoCAuth.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../out/production/Client/pack/PackageAstoCAuthEkc.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../out/production/Client/pack/PackageAstoCLogin.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../out/production/Client/pack/PackageAstoCModify.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../out/production/Client/pack/PackageAstoCRegister.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../out/production/Client/pack/PackageCtoAsLogin.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../out/production/Client/pack/PackageCtoAsLoginEkc.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../out/production/Client/pack/PackageCtoAsModify.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../out/production/Client/pack/PackageCtoAsModifyEkc.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../out/production/Client/pack/PackageCtoAsRegister.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../out/production/Client/pack/PackageCtoAsRegisterEkc.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../out/production/Client/pack/PackageCtoTgs.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../out/production/Client/pack/PackageCtoVAuth.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../out/production/Client/pack/PackageCtoVPublicMsg.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../out/production/Client/pack/PackageCtoVPublicMsgEkCV.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../out/production/Client/pack/PackageTgstoC.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../out/production/Client/pack/PackageTgstoCEkCTgs.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../out/production/Client/pack/PackageVtoCAuth.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../out/production/Client/pack/PackageVtoCPublicMsg.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../out/production/Client/pack/PackageVtoCPublicMsgEkCV.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../out/production/Client/pack/TicketTgs.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../out/production/Client/pack/TicketV.class" beforeDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="ProjectId" id="2A0UYzdGzdliKmgGMATCK5S77E7" />
+  <component name="ProjectViewState">
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../kerberos/MessageServer" />
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="a0d02c6c-c5af-4df5-878d-dd5b0647c40d" name="Default Changelist" comment="" />
+      <created>1654146048128</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1654146048128</updated>
+      <workItem from="1654146049721" duration="85000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+</project>

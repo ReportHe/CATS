@@ -1,0 +1,104 @@
+2022-05-30 21:06:58 ÏÂÎç [Thread: Thread-0][ Class:TGS >> Method: log.Log.PrintPackageCToTgs(Log.java:45) ]
+INFO:·þÎñÆ÷µÄ±êÊ¶(·þÎñÆ÷µÄÍøÂçµØÖ·)£º192.168.43.38
+PackageCToTgs --> Ticket:
+ASÉú³ÉµÄCÓëTgsµÄ»á»°ÃÜÔ¿£º12345678
+ClientµÄ±êÊ¶(ÕËºÅ)£º1111111111
+ClientµÄÍøÂçµØÖ·£º192.168.43.38
+TgsµÄ±êÊ¶(TgsµÄÍøÂçµØÖ·)£º192.168.43.205
+Ê±¼ä´Á(Æ±¾ÝÇ©·¢Ê±¼ä)£º2022-05-30 21:06:56
+Æ±¾ÝµÄÓÐÐ§ÆÚ£º2022-05-30 21:06:56
+PackageCToTgs --> Authenticator:
+ClientµÄ±êÊ¶(ÕËºÅ)£º1111111111
+ClientµÄÍøÂçµØÖ·£º192.168.43.38
+ClientÉú³ÉµÄÊ±¼ä´Á£º2022-05-30 21:06:57
+
+2022-05-30 21:06:58 ÏÂÎç [Thread: Thread-0][ Class:TGS >> Method: log.Log.AuthLog(Log.java:36) ]
+INFO:¿Í»§¶Ë1111111111Óë192.168.43.205ÈÏÖ¤³É¹¦
+2022-05-30 21:13:28 ÏÂÎç [Thread: Thread-0][ Class:TGS >> Method: log.Log.PrintPackageCToTgs(Log.java:45) ]
+INFO:·þÎñÆ÷µÄ±êÊ¶(·þÎñÆ÷µÄÍøÂçµØÖ·)£º192.168.43.38
+PackageCToTgs --> Ticket:
+ASÉú³ÉµÄCÓëTgsµÄ»á»°ÃÜÔ¿£º12345678
+ClientµÄ±êÊ¶(ÕËºÅ)£º1111111111
+ClientµÄÍøÂçµØÖ·£º192.168.43.38
+TgsµÄ±êÊ¶(TgsµÄÍøÂçµØÖ·)£º192.168.43.205
+Ê±¼ä´Á(Æ±¾ÝÇ©·¢Ê±¼ä)£º2022-05-30 21:13:27
+Æ±¾ÝµÄÓÐÐ§ÆÚ£º2022-05-30 21:13:27
+PackageCToTgs --> Authenticator:
+ClientµÄ±êÊ¶(ÕËºÅ)£º1111111111
+ClientµÄÍøÂçµØÖ·£º192.168.43.38
+ClientÉú³ÉµÄÊ±¼ä´Á£º2022-05-30 21:13:27
+
+2022-05-30 21:13:28 ÏÂÎç [Thread: Thread-0][ Class:TGS >> Method: log.Log.AuthLog(Log.java:36) ]
+INFO:¿Í»§¶Ë1111111111Óë192.168.43.205ÈÏÖ¤³É¹¦
+2022-05-30 21:16:32 ÏÂÎç [Thread: Thread-0][ Class:TGS >> Method: log.Log.PrintPackageCToTgs(Log.java:45) ]
+INFO:·þÎñÆ÷µÄ±êÊ¶(·þÎñÆ÷µÄÍøÂçµØÖ·)£º192.168.43.38
+PackageCToTgs --> Ticket:
+ASÉú³ÉµÄCÓëTgsµÄ»á»°ÃÜÔ¿£º12345678
+ClientµÄ±êÊ¶(ÕËºÅ)£º1111111111
+ClientµÄÍøÂçµØÖ·£º192.168.43.38
+TgsµÄ±êÊ¶(TgsµÄÍøÂçµØÖ·)£º192.168.43.205
+Ê±¼ä´Á(Æ±¾ÝÇ©·¢Ê±¼ä)£º2022-05-30 21:16:31
+Æ±¾ÝµÄÓÐÐ§ÆÚ£º2022-05-30 21:16:31
+PackageCToTgs --> Authenticator:
+ClientµÄ±êÊ¶(ÕËºÅ)£º1111111111
+ClientµÄÍøÂçµØÖ·£º192.168.43.38
+ClientÉú³ÉµÄÊ±¼ä´Á£º2022-05-30 21:16:31
+
+2022-05-30 21:16:32 ÏÂÎç [Thread: Thread-0][ Class:TGS >> Method: log.Log.AuthLog(Log.java:36) ]
+INFO:¿Í»§¶Ë1111111111Óë192.168.43.205ÈÏÖ¤³É¹¦
+2022-05-30 21:18:56 ÏÂÎç [Thread: Thread-1][ Class:TGS >> Method: log.Log.PrintPackageCToTgs(Log.java:45) ]
+INFO:·þÎñÆ÷µÄ±êÊ¶(·þÎñÆ÷µÄÍøÂçµØÖ·)£º192.168.43.38
+PackageCToTgs --> Ticket:
+ASÉú³ÉµÄCÓëTgsµÄ»á»°ÃÜÔ¿£º12345678
+ClientµÄ±êÊ¶(ÕËºÅ)£º1111111111
+ClientµÄÍøÂçµØÖ·£º192.168.43.38
+TgsµÄ±êÊ¶(TgsµÄÍøÂçµØÖ·)£º192.168.43.205
+Ê±¼ä´Á(Æ±¾ÝÇ©·¢Ê±¼ä)£º2022-05-30 21:18:55
+Æ±¾ÝµÄÓÐÐ§ÆÚ£º2022-05-30 21:18:55
+PackageCToTgs --> Authenticator:
+ClientµÄ±êÊ¶(ÕËºÅ)£º1111111111
+ClientµÄÍøÂçµØÖ·£º192.168.43.38
+ClientÉú³ÉµÄÊ±¼ä´Á£º2022-05-30 21:18:55
+
+2022-05-30 21:18:56 ÏÂÎç [Thread: Thread-1][ Class:TGS >> Method: log.Log.AuthLog(Log.java:36) ]
+INFO:¿Í»§¶Ë1111111111Óë192.168.43.205ÈÏÖ¤³É¹¦
+2022-05-30 21:26:45 ÏÂÎç [Thread: Thread-0][ Class:TGS >> Method: log.Log.PrintPackageCToTgs(Log.java:45) ]
+INFO:·þÎñÆ÷µÄ±êÊ¶(·þÎñÆ÷µÄÍøÂçµØÖ·)£º192.168.43.38
+PackageCToTgs --> Ticket:
+ASÉú³ÉµÄCÓëTgsµÄ»á»°ÃÜÔ¿£º12345678
+ClientµÄ±êÊ¶(ÕËºÅ)£º1111111111
+ClientµÄÍøÂçµØÖ·£º192.168.43.38
+TgsµÄ±êÊ¶(TgsµÄÍøÂçµØÖ·)£º192.168.43.205
+Ê±¼ä´Á(Æ±¾ÝÇ©·¢Ê±¼ä)£º2022-05-30 21:26:43
+Æ±¾ÝµÄÓÐÐ§ÆÚ£º2022-05-30 21:26:43
+PackageCToTgs --> Authenticator:
+ClientµÄ±êÊ¶(ÕËºÅ)£º1111111111
+ClientµÄÍøÂçµØÖ·£º192.168.43.38
+ClientÉú³ÉµÄÊ±¼ä´Á£º2022-05-30 21:26:44
+
+2022-05-30 21:26:45 ÏÂÎç [Thread: Thread-0][ Class:TGS >> Method: log.Log.AuthLog(Log.java:36) ]
+INFO:¿Í»§¶Ë1111111111Óë192.168.43.205ÈÏÖ¤³É¹¦
+2022-05-30 21:39:54 ÏÂÎç [Thread: Thread-0][ Class:TGS >> Method: log.Log.PrintPackageCToTgs(Log.java:44) ]
+INFO:·þÎñÆ÷µÄ±êÊ¶(·þÎñÆ÷µÄÍøÂçµØÖ·)£º192.168.43.38
+PackageCToTgs --> Ticket:
+ASÉú³ÉµÄCÓëTgsµÄ»á»°ÃÜÔ¿£º12345678
+ClientµÄ±êÊ¶(ÕËºÅ)£º1111111111
+ClientµÄÍøÂçµØÖ·£º192.168.43.38
+TgsµÄ±êÊ¶(TgsµÄÍøÂçµØÖ·)£º192.168.43.205
+Ê±¼ä´Á(Æ±¾ÝÇ©·¢Ê±¼ä)£º2022-05-30 21:39:52
+Æ±¾ÝµÄÓÐÐ§ÆÚ£º2022-05-30 21:39:52
+PackageCToTgs --> Authenticator:
+ClientµÄ±êÊ¶(ÕËºÅ)£º1111111111
+ClientµÄÍøÂçµØÖ·£º192.168.43.38
+ClientÉú³ÉµÄÊ±¼ä´Á£º2022-05-30 21:39:53
+
+2022-05-30 21:39:54 ÏÂÎç [Thread: Thread-0][ Class:TGS >> Method: log.Log.AuthLog(Log.java:35) ]
+INFO:¿Í»§¶Ë1111111111Óë192.168.43.205ÈÏÖ¤³É¹¦
+2022-05-30 21:41:23 ÏÂÎç [Thread: Thread-0][ Class:TGS >> Method: log.Log.AuthLog(Log.java:35) ]
+INFO:¿Í»§¶Ë2222222222Óë192.168.43.205ÈÏÖ¤³É¹¦
+2022-05-30 21:43:53 ä¸‹åˆ [Thread: Thread-0][ Class:TGS >> Method: log.Log.AuthLog(Log.java:35) ]
+INFO:å®¢æˆ·ç«¯2222222222ä¸Ž192.168.43.205è®¤è¯æˆåŠŸ
+2022-05-30 21:46:14 ä¸‹åˆ [Thread: Thread-0][ Class:TGS >> Method: log.Log.AuthLog(Log.java:35) ]
+INFO:å®¢æˆ·ç«¯3333333333ä¸Ž192.168.43.205è®¤è¯æˆåŠŸ
+2022-05-30 21:51:20 ä¸‹åˆ [Thread: Thread-1][ Class:TGS >> Method: log.Log.AuthLog(Log.java:35) ]
+INFO:å®¢æˆ·ç«¯4444444444ä¸Ž192.168.43.205è®¤è¯æˆåŠŸ
