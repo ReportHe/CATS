@@ -4,7 +4,7 @@ import struct.ArrayLengthMarker;
 import struct.StructClass;
 import struct.StructField;
 /*
-dasda
+heaoao
  */
 @StructClass
 public class PackageAstoCAuth {
