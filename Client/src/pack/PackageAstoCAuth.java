@@ -3,7 +3,9 @@ package pack;
 import struct.ArrayLengthMarker;
 import struct.StructClass;
 import struct.StructField;
-
+/*
+dasda
+ */
 @StructClass
 public class PackageAstoCAuth {
     @StructField(order = 0)
