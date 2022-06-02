@@ -13,7 +13,7 @@ import struct.StructException;
 import des.MainBody;
 import pack.*;
 import log.*;
-//git
+
 public class AS implements Runnable{
     private Socket socket;// 连接客户端返回的socket对象
     private byte[] receivePackage;// 接收到的数据包
@@ -30,7 +30,7 @@ public class AS implements Runnable{
     public static void main(String[] args) {
         ServerSocket serverSocket;
         try {
-            serverSocket = new ServerSocket(8888);
+            serverSocket = new ServerSocket(8889);
             System.out.println("Authentication Server is running...");
             while (true) {
                 Socket socket = serverSocket.accept();// 等待连接
