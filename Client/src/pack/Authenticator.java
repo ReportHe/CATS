@@ -2,7 +2,9 @@ package pack;
 import struct.ArrayLengthMarker;
 import struct.StructClass;
 import struct.StructField;
-
+/*
+heao
+ */
 @StructClass
 public class Authenticator {
     @StructField(order = 0)
