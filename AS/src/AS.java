@@ -171,7 +171,8 @@ public class AS implements Runnable{
                 byte[] returnData = JavaStruct.pack(packageAstoCAuth, ByteOrder.BIG_ENDIAN);
                 socket.getOutputStream().write(returnData);
                 socket.shutdownOutput();
-                Log.sendPackageLog("log_succ", ipAS, socket.getInetAddress().getHostAddress(),ticketTgs,name);
+                Log.sendPackageLog("log_succ", ipAS, socket.getInetAddress().getHostAddress(), packageAstoCAuthEkc);
+                Log.sendPackageLog("log_succ", ipAS, socket.getInetAddress().getHostAddress(), packageAstoCAuth);
                 return;
             }
 
