@@ -26,7 +26,7 @@ import java.util.Objects;
 import Utils.*;
 import pack.*;
 import struct.JavaStruct;
-
+//hhhhhh
 public class LogRegWindow extends Application {
     @FXML
     private AnchorPane pane;
