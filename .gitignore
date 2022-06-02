@@ -1,0 +1,9 @@
+# 忽略任何目录下名为 xxx 的文件夹
+.idea/
+bin/
+out/
+resources/
+main/
+
+# 忽略名为TGS.iml 文件
+untitled.iml
