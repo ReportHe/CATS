@@ -14,7 +14,7 @@ import des.MainBody;
 import pack.*;
 import log.*;
 //github
-jijijii
+jijijiiygggggggggggggggggg
 
 public class AS implements Runnable{
     private Socket socket;// 连接客户端返回的socket对象
