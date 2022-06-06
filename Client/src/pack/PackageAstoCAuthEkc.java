@@ -3,7 +3,7 @@ package pack;
 import struct.ArrayLengthMarker;
 import struct.StructClass;
 import struct.StructField;
-
+//hh
 @StructClass
 public class PackageAstoCAuthEkc {
     @StructField(order = 0)
