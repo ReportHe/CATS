@@ -21,6 +21,7 @@ import java.util.LinkedList;
 import java.util.Objects;
 
 public class MessageServer extends Application {
+	//git
 
 	//UI控件
 	private TextArea showTextArea = new TextArea();
