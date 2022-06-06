@@ -2,9 +2,8 @@ package pack;
 import struct.ArrayLengthMarker;
 import struct.StructClass;
 import struct.StructField;
-
-/**
- * author：he
+/*
+heao
  */
 @StructClass
 public class Authenticator {

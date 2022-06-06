@@ -101,7 +101,8 @@ public class TGS implements Runnable {
                         if (Arrays.equals(tickettgs.IdClient, authenticator.IdClient)
                                         && Arrays.equals(tickettgs.AddressClient, authenticator.AddressClient))// 比对票据和认证中的信息是否核对成功，成功则发送包
                         {
-                                Log.AuthLog(IdTgs, 0, String.valueOf(tickettgs.IdClient));
+                                //Log.AuthLog(IdTgs, 0, String.valueOf(tickettgs.IdClient));
+                                System.out.println("客户端：" + String.valueOf(tickettgs.IdClient) + " 与 TGS：" + IdTgs);
 
                                 System.out.println("用户认证成功!");
 
@@ -148,7 +149,8 @@ public class TGS implements Runnable {
                                 socket2.getOutputStream().write(package_pack);
                                 socket2.shutdownOutput();
                         } else {
-                                log.Log.AuthLog(IdTgs, 1, String.valueOf(tickettgs.IdClient));
+                                System.out.println("客户端：" + String.valueOf(tickettgs.IdClient) + " 与 TGS：" + IdTgs);
+                                //log.Log.AuthLog(IdTgs, 1, String.valueOf(tickettgs.IdClient));
                                 System.out.println("非法入侵！");
                         }
                 } catch (IOException | StructException e) {

@@ -1,7 +1,5 @@
 package entity;
 
-import java.util.Date;
-
 /**
  * Description：信息类
  * Date:2022/5/21 16:57
@@ -11,12 +9,14 @@ public class Msg {
     private String senderId;
     private String content;
     private String time;
+    private byte[] digitalSignature;
 
-    public Msg(String senderName, String senderId, String content, String time) {
+    public Msg(String senderName, String senderId, String content, String time, byte[] digitalSignature) {
         this.senderName = senderName;
         this.senderId = senderId;
         this.content = content;
         this.time = time;
+        this.digitalSignature = digitalSignature;
     }
 
     public String getSenderName() {
@@ -51,6 +51,8 @@ public class Msg {
         this.time = time;
     }
 
+    public byte[] getDigitalSignature() {return digitalSignature;}
+
     //重写toString方法
 
     @Override
@@ -61,7 +63,4 @@ public class Msg {
                 content;
     }
 
-    public static void main(String[] args) {
-        System.out.println(new Msg("张三","309501908","大家好！", "2022-5-21-12:20"));
-    }
 }

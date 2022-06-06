@@ -13,7 +13,6 @@ import struct.StructException;
 import des.MainBody;
 import pack.*;
 import log.*;
-//github
 
 public class AS implements Runnable{
     private Socket socket;// 连接客户端返回的socket对象

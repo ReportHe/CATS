@@ -98,3 +98,9 @@ INFO:øÕªß∂À1111111111”Î192.168.43.205»œ÷§≥…π¶
 INFO:øÕªß∂À2222222222”Î192.168.43.205»œ÷§≥…π¶
 2022-05-30 21:43:53 ‰∏ãÂçà [Thread: Thread-0][ Class:TGS >> Method: log.Log.AuthLog(Log.java:35) ]
 INFO:ÂÆ¢Êà∑Á´Ø2222222222‰∏é192.168.43.205ËÆ§ËØÅÊàêÂäü
+2022-05-30 21:46:14 ‰∏ãÂçà [Thread: Thread-0][ Class:TGS >> Method: log.Log.AuthLog(Log.java:35) ]
+INFO:ÂÆ¢Êà∑Á´Ø3333333333‰∏é192.168.43.205ËÆ§ËØÅÊàêÂäü
+2022-05-30 21:51:20 ‰∏ãÂçà [Thread: Thread-1][ Class:TGS >> Method: log.Log.AuthLog(Log.java:35) ]
+INFO:ÂÆ¢Êà∑Á´Ø4444444444‰∏é192.168.43.205ËÆ§ËØÅÊàêÂäü
+2022-06-01 10:29:49 …œŒÁ [Thread: Thread-0][ Class:TGS >> Method: log.Log.AuthLog(Log.java:35) ]
+INFO:øÕªß∂À1111111111”Î192.168.43.205»œ÷§≥…π¶

@@ -21,12 +21,13 @@ import java.net.UnknownHostException;
 import java.nio.charset.StandardCharsets;
 import java.security.MessageDigest;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Objects;
 
 import Utils.*;
 import pack.*;
 import struct.JavaStruct;
-//hhhhhh
+
 public class LogRegWindow extends Application {
     @FXML
     private AnchorPane pane;
@@ -42,6 +43,8 @@ public class LogRegWindow extends Application {
     private Label accountAlertLabel;
     @FXML
     private Label passwordAlertLabel;
+    @FXML
+    private TextArea textArea;
 
     private final String IpAS = "192.168.43.248";    //AS服务器的IP地址
     private final String IDtgs= "192.168.43.205";   //TGS服务器标识(选用ip地址)
@@ -61,8 +64,8 @@ public class LogRegWindow extends Application {
         Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("LogRegWindow.fxml")));
         primaryStage.setTitle("公共聊天室");
         primaryStage.getIcons().add(new Image(getClass().getResource("信息.png").toExternalForm()));
-        primaryStage.setScene(new Scene(root,400,300));
-        primaryStage.setResizable(false);
+        primaryStage.setScene(new Scene(root,1500,800));
+//        primaryStage.setResizable(false);
         primaryStage.show();
     }
 
@@ -121,8 +124,9 @@ public class LogRegWindow extends Application {
         //打开客户端页面
         CWindow cWindow = new CWindow(name, account, pwd, ticketV);
         cWindow.start(new Stage());
-        Stage primaryStage = (Stage)loginButton.getScene().getWindow();
-        primaryStage.close();
+        //不关闭登录页面
+//        Stage primaryStage = (Stage)loginButton.getScene().getWindow();
+//        primaryStage.close();
     }
     /*
      *认证：C ——> AS -> TGS -> V
@@ -136,6 +140,10 @@ public class LogRegWindow extends Application {
         byte[] pacalePackE = new MainBody(pcalePack,KeyCAS,1).mainBody();
         PackageCtoAsLogin pcal = new PackageCtoAsLogin(pacalePackE);
         byte[] pcalPack = JavaStruct.pack(pcal);
+        //明文显示——CtoAS
+        textArea.appendText("PackageCtoAsLogin明文内容：\n   IDc(账号)：" + String.valueOf(pcale.IDc) + " IDtgs" + String.valueOf(pcale.IDtgs)
+                + " TS(时间戳)：" + String.valueOf(pcale.TS1) + " password(MD5加密)：" + Arrays.toString(Arrays.toString(pcale.content).getBytes(StandardCharsets.UTF_8)));
+        textArea.appendText("\nPackageCtoAsLogin密文内容：\n   " + Arrays.toString(pacalePackE));
         //打印日志
         Log.PackageCtoAsLoginContent(pcale, pacalePackE, 0);//明文
         Log.PackageCtoAsLoginContent(pcale, pacalePackE, 1);//密文
@@ -152,6 +160,12 @@ public class LogRegWindow extends Application {
             KeyCTgs = String.valueOf(pacaEkc.KcTgs);   //C-TGS密钥
             ticketTgs = pacaEkc.TicketTgs;    //票据
             name = String.valueOf(pacaEkc.name);    //昵称
+            //明文显示——AStoC
+            textArea.appendText("\nPackageAstoCAuth明文内容：\n   KcTgs：" + String.valueOf(pacaEkc.KcTgs) + " IDtgs" + String.valueOf(pacaEkc.IDtgs)
+                    + " TS(时间戳)：" + String.valueOf(pacaEkc.TS) + " Lifetime：" + String.valueOf(pacaEkc.Lifetime)
+                    + "\n   TicketTgs：\n      " + Arrays.toString(pacaEkc.TicketTgs));
+            textArea.appendText("\nPackageAstoCAuth密文内容：\n   " + Arrays.toString(paclPack));
+            textArea.appendText("\nAS阶段认证成功！\n");
             //打印日志
             Log.PackageAStoCAuthContent(pacaEkc,paclPack,1);//密文
             Log.PackageAStoCAuthContent(pacaEkc,paclPack,0);//明文
@@ -164,6 +178,11 @@ public class LogRegWindow extends Application {
             //PackageCtoTgs = IDv || TicketTgs || Authenticator
             PackageCtoTgs pct = new PackageCtoTgs(IDv,ticketTgs,authE);
             byte[] pctPack = JavaStruct.pack(pct);
+            //明文展示
+            textArea.appendText("\nPackageCtoTGSAuth明文内容：\n   IDv：" + String.valueOf(pct.IDv)
+                    + "\n   TicketTgs：\n      " + Arrays.toString(pct.TicketTgs)
+                    + "\n   Authenticator：\n      IDc：" + String.valueOf(auth.IDc) + " ADc：" + String.valueOf(auth.ADc) + " TS(时间戳):" + String.valueOf(auth.TS));
+            textArea.appendText("\nPackageCtoTGSAuth密文内容(Authenticator)：\n   " + Arrays.toString(authE));
             //打印日志
             Log.PackageCtoTGSAuthContent(pct, auth, authE, 0);//明文
             Log.PackageCtoTGSAuthContent(pct, auth, authE, 1);//密文
@@ -180,6 +199,11 @@ public class LogRegWindow extends Application {
                 //得到C-V密钥 和 V票据
                 KeyCV = String.valueOf(ptcEkc.Kcv);
                 ticketV = ptcEkc.TicketV;
+                //明文显示TGS-C
+                textArea.appendText("\nPackageTgstoC明文内容：\n   Kcv：" + String.valueOf(ptcEkc.Kcv) + " IDv：" + String.valueOf(ptcEkc.IDv) + " TS(时间戳)" + String.valueOf(ptcEkc.TS)
+                        + "\n   TicketV：\n      " + Arrays.toString(ptcEkc.TicketV));
+                textArea.appendText("\nPackageTgstoC密文内容(Authenticator)：\n   " + Arrays.toString(ptcPack));
+                textArea.appendText("\nTGS阶段认证成功！\n");
                 //打印日志
                 Log.PackageTgstoCContent(ptcEkc, ptcPack,1);//密文
                 Log.PackageTgstoCContent(ptcEkc, ptcPack,0);//明文
@@ -192,12 +216,17 @@ public class LogRegWindow extends Application {
                 authE = new MainBody(authPack,KeyCV,1).mainBody();
                 PackageCtoVAuth pcva = new PackageCtoVAuth(ticketV,authE);
                 byte[] pcvaPack = JavaStruct.pack(pcva);
+                //明文展示C-V
+                textArea.appendText("\nPackageCtoVAuth明文内容：\n   TicketV：\n      " + Arrays.toString(pcva.TicketV)
+                        + "\n   Authenticator：\n      IDc：" + String.valueOf(auth.IDc) + " ADc：" + String.valueOf(auth.ADc) + " TS(时间戳):" + String.valueOf(auth.TS));
+                textArea.appendText("\nPackageCtoVAuth密文内容(Authenticator)：\n   " + Arrays.toString(authE));
                 //打印日志
                 Log.PackageCtoVAuthContent(pcva,auth,authE,0);//明文
                 Log.PackageCtoVAuthContent(pcva,auth,authE,1);//密文
                 byte[] pvcaPack = Connect("PackageCtoVAuth","PackageVtoCAuth",pcvaPack,IDv,9998);
 
                 if(pvcaPack[0] == 7) {     //接收到V的包，状态位为7代表和 V认证成功
+                    textArea.appendText("\nC和V阶段认证成功！\n\n");
                     Log.AuthLog("服务器V",1,account);
                     return true;
                 } else {

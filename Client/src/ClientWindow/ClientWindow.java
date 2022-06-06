@@ -17,10 +17,7 @@ import javafx.scene.image.Image;
 import javafx.scene.media.Media;
 import javafx.scene.media.MediaPlayer;
 import javafx.stage.Stage;
-import pack.PackageCtoVPublicMsg;
-import pack.PackageCtoVPublicMsgEkCV;
-import pack.PackageVtoCPublicMsg;
-import pack.PackageVtoCPublicMsgEkCV;
+import pack.*;
 import struct.JavaStruct;
 import struct.StructException;
 
@@ -219,7 +216,7 @@ public class ClientWindow extends Application {
             SimpleDateFormat sdFormatter = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
             String time = sdFormatter.format(Long.parseLong(String.valueOf(msgEkCV.TS)));
 
-            return new Msg(name, id, content, time);
+            return new Msg(name, id, content, time, new byte[]{});
         }
     }
 }

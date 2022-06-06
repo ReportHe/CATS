@@ -16,7 +16,6 @@ import javafx.scene.image.Image;
 import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.layout.AnchorPane;
-import javafx.scene.layout.Pane;
 import javafx.scene.media.Media;
 import javafx.scene.media.MediaPlayer;
 import javafx.stage.Stage;
@@ -49,9 +48,11 @@ public class CWindow extends Application {
     private String KeyCAS = "12345678";
     //UI控件
     private Label welComeLabel = new Label();
+    private Label showLabel =  new Label();
     private TextArea showTextArea = new TextArea();
+    private TextArea showSignatureArea = new TextArea();
     private TextField msgTextField = new TextField();
-    private Button sendButton = new Button("发送(Enter)");
+    private Button sendButton = new Button("发送");
 
     private String account = "1111111111";
     private String password = "";
@@ -94,24 +95,40 @@ public class CWindow extends Application {
 
     @Override
     public void start(Stage primaryStage) throws Exception {
+        //欢迎标签
         welComeLabel.setLayoutX(14.0);
         welComeLabel.setLayoutY(14.0);
         welComeLabel.setPrefHeight(20.0);
         welComeLabel.setPrefWidth(227.0);
         welComeLabel.setText("欢迎你，" + name + "(" + account + ")");
-        showTextArea.setLayoutX(160.0);
-        showTextArea.setLayoutY(42.0);
-        showTextArea.setPrefHeight(276.0);
-        showTextArea.setPrefWidth(467.0);
+        //数字签名展示标签
+        showLabel.setLayoutX(592.0);
+        showLabel.setLayoutY(14.0);
+        showLabel.setPrefHeight(20.0);
+        showLabel.setPrefWidth(353.0);
+        showLabel.setText("数字签名展示：ID + Content + Digital Signature");
+        //消息展示框
+        showTextArea.setLayoutX(14.0);
+        showTextArea.setLayoutY(46.0);
+        showTextArea.setPrefHeight(337.0);
+        showTextArea.setPrefWidth(546.0);
         showTextArea.setEditable(false);
-        msgTextField.setLayoutX(160.0);
-        msgTextField.setLayoutY(322.0);
-        msgTextField.setPrefHeight(86.0);
-        msgTextField.setPrefWidth(467.0);
+        //数字签名展示
+        showSignatureArea.setLayoutX(592.0);
+        showSignatureArea.setLayoutY(46.0);
+        showSignatureArea.setPrefHeight(451.0);
+        showSignatureArea.setPrefWidth(507.0);
+        showSignatureArea.setEditable(false);
+        //消息输入框
+        msgTextField.setLayoutX(14.0);
+        msgTextField.setLayoutY(402.0);
+        msgTextField.setPrefHeight(93.0);
+        msgTextField.setPrefWidth(546.0);
         msgTextField.setPromptText("在此输入文本消息");
         msgTextField.setAlignment(Pos.TOP_LEFT);
-        sendButton.setLayoutX(540.0);
-        sendButton.setLayoutY(408.0);
+        //发送按钮
+        sendButton.setLayoutX(510.0);
+        sendButton.setLayoutY(503.0);
 
         AnchorPane pane = new AnchorPane();
         Scene scene = new Scene(pane);
@@ -169,12 +186,20 @@ public class CWindow extends Application {
 
         execute();
 
-        pane.getChildren().addAll(welComeLabel,showTextArea,msgTextField,sendButton);
-        pane.setPrefSize(443.0,500.0);
+        pane.getChildren().addAll(welComeLabel,showTextArea,msgTextField,sendButton,showSignatureArea,showLabel);
+        pane.setPrefSize(1114.0,582.0);
         primaryStage.setTitle("聊天室客户端");
         primaryStage.getIcons().add(new Image(Objects.requireNonNull(getClass().getResource("信息.png")).toExternalForm()));
         primaryStage.setScene(scene);
         primaryStage.show();
+    }
+    @Override
+    public void stop(){
+        try {
+            socket.close();
+        } catch (IOException ioException) {
+            ioException.printStackTrace();
+        }
     }
     public void execute() {
         try {
@@ -240,7 +265,9 @@ public class CWindow extends Application {
                 Media media = new Media(new File("src/ClientWindow/notification.mp3").toURI().toString());
                 MediaPlayer mediaPlayer = new MediaPlayer(media);
                 mediaPlayer.play();
+                //展示
                 showTextArea.appendText(msg + "\n");
+                showSignatureArea.appendText(Objects.requireNonNull(msg).getSenderId() + ": " + msg.getContent() + Arrays.toString(msg.getDigitalSignature()) + "\n");
 
                 cur = new byte[pre.length - 9 - totalLen];
                 System.arraycopy(pre, 9 + totalLen, cur,0, pre.length - 9 - totalLen);
@@ -272,8 +299,8 @@ public class CWindow extends Application {
             BigInteger[] publicKey = new BigInteger[2];
             Util.readPublicKey(publicKey,id);   //得到公钥
             byte[] mdDecrypted = RSA.decryption(mdEncrypted, publicKey[0], publicKey[1]);//对数字签名进行解密
-            if (Arrays.equals(md, mdDecrypted)) {//哈希值相同
-                return new Msg(name, id, content, time);
+            if (Arrays.equals(md, mdDecrypted)) {//验证哈希值
+                return new Msg(name, id, content, time, mdEncrypted);
             }
             return null;
         }
