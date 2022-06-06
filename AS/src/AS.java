@@ -15,6 +15,8 @@ import pack.*;
 import log.*;
 
 public class AS implements Runnable{
+    //git
+
     private Socket socket;// 连接客户端返回的socket对象
     private byte[] receivePackage;// 接收到的数据包
     private final static String keyCAS = "12345678";// C和AS会话的des密钥
