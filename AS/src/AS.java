@@ -15,7 +15,7 @@ import pack.*;
 import log.*;
 
 public class AS implements Runnable{
-    //git
+    //github
 
     private Socket socket;// 连接客户端返回的socket对象
     private byte[] receivePackage;// 接收到的数据包
