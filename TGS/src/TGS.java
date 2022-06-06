@@ -16,7 +16,7 @@ import pack.TicketV;
 import struct.JavaStruct;
 import struct.StructException;
 import log.Log;
-//git git git
+//git git git   git gitgit
 
 public class TGS implements Runnable {
         private Socket socket2;
