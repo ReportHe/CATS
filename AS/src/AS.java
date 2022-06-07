@@ -123,7 +123,7 @@ public class AS implements Runnable{
             preSta.executeUpdate();// 数据库添加用户注册的账号、密码
 
 
-            System.out.println("秦国aaaaaaaaaaaaaaaa111111111111111");
+            System.out.println("秦国aaaaaaaaaaaaaaaa11111111111");
 
             Log.sendPackageLog("AS Reg_suc package", ipAS, socket.getInetAddress().getHostAddress());// 记录发包日志
         } catch (StructException e) {
