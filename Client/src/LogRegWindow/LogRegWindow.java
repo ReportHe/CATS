@@ -54,8 +54,7 @@ public class LogRegWindow extends Application {
     private String KeyCV;               //C-V的对话密钥
     private byte[] ticketTgs;           //TGS票据
     private byte[] ticketV;             //V票据
-//    private final String ADc = "192.168.43.38"; //Client的IP地址(防止非法冒用)
-    private String ADc;  //客户端ip地址
+    private final String ADc = "192.168.43.248"; //Client的IP地址(防止非法冒用)
 
     private String name;   //昵称
 
@@ -132,7 +131,6 @@ public class LogRegWindow extends Application {
      *认证：C ——> AS -> TGS -> V
      */
     public Boolean auth(String account, String passwd) throws Exception {
-        ADc = InetAddress.getLocalHost().getHostAddress();
         Long TS1 = System.currentTimeMillis();    //TS时间戳
         MessageDigest md5 = MessageDigest.getInstance("MD5");
         PackageCtoAsLoginEkc pcale = new PackageCtoAsLoginEkc(account, IDtgs, TS1.toString(), md5.digest(passwd.getBytes(StandardCharsets.UTF_8)));

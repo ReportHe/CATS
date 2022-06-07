@@ -11,5 +11,7 @@
     <orderEntry type="library" name="libs" level="project" />
     <orderEntry type="library" name="resources" level="project" />
     <orderEntry type="library" name="resources1" level="project" />
+    <orderEntry type="library" name="javafx.controls" level="project" />
+    <orderEntry type="library" name="javafx.swing" level="project" />
   </component>
 </module>

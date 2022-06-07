@@ -262,9 +262,9 @@ public class CWindow extends Application {
                 //解密后展示在textArea上
                 Msg msg = PackToEntity(packageVtoCPublicMsg);
                 //提示音
-                Media media = new Media(new File("src/ClientWindow/notification.mp3").toURI().toString());
-                MediaPlayer mediaPlayer = new MediaPlayer(media);
-                mediaPlayer.play();
+//                Media media = new Media(new File("src/ClientWindow/notification.mp3").toURI().toString());
+//                MediaPlayer mediaPlayer = new MediaPlayer(media);
+//                mediaPlayer.play();
                 //展示
                 showTextArea.appendText(msg + "\n");
                 showSignatureArea.appendText(Objects.requireNonNull(msg).getSenderId() + ": " + msg.getContent() + Arrays.toString(msg.getDigitalSignature()) + "\n");
