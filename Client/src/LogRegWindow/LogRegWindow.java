@@ -166,6 +166,7 @@ public class LogRegWindow extends Application {
                     + "\n   TicketTgs：\n      " + Arrays.toString(pacaEkc.TicketTgs));
             textArea.appendText("\nPackageAstoCAuth密文内容：\n   " + Arrays.toString(paclPack));
             textArea.appendText("\nAS阶段认证成功！\n");
+            System.out.println("heao");
             //打印日志
             Log.PackageAStoCAuthContent(pacaEkc,paclPack,1);//密文
             Log.PackageAStoCAuthContent(pacaEkc,paclPack,0);//明文
