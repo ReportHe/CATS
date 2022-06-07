@@ -122,6 +122,9 @@ public class AS implements Runnable{
             preSta.setString(3, name);
             preSta.executeUpdate();// 数据库添加用户注册的账号、密码
 
+
+            System.out.println("秦国aaaaaaaaaaaaaaaa1111111111111111111111111");
+
             Log.sendPackageLog("AS Reg_suc package", ipAS, socket.getInetAddress().getHostAddress());// 记录发包日志
         } catch (StructException e) {
             e.printStackTrace();
@@ -190,6 +193,7 @@ public class AS implements Runnable{
         } catch (IOException e) {
             e.printStackTrace();
         } catch (Exception e) {
+
             e.printStackTrace();
         }
     }
